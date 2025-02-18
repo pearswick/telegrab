@@ -4,7 +4,7 @@ A Python OSINT tool for investigative journalists to check if phone numbers are 
 
 ## 🖼️ Screenshots
 
-![Telegrab CLI Interface](screenshots/telegrab_cli.jpg)
+![Telegrab CLI Interface](screenshots/telegrab_cli.png)
 
 *The Telegrab command-line interface showing search results*
 

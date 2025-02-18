@@ -7,7 +7,7 @@ from rich.console import Console
 from rich.table import Table
 from rich import print as rprint
 from rich.progress import track
-from rich.box import HEAVY
+from rich.box import HEAVY, ROUNDED
 import asyncio
 import time
 
@@ -115,7 +115,8 @@ async def main():
         show_header=True,
         header_style="bold white",
         show_lines=True,
-        box=HEAVY,
+        box=ROUNDED,
+        border_style="white",
         padding=(0, 1)
     )
     table.add_column("PHONE NUMBER", justify="center", style="white")
