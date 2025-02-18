@@ -15,4 +15,5 @@ venv/
 .vscode/
 .idea/
 
-session_name.session 
+session_name.session
+*.DS_Store
