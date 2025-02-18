@@ -1,6 +1,8 @@
 # 📱 Telegrab - A Telegram Phone Number Checker
 
-A Python OSINT tool for investigative journalists to check if phone numbers are registered on Telegram. This tool provides a user-friendly terminal interface with colored output and multiple input methods.
+A Python OSINT tool for investigative journalists to check if phone numbers are registered on Telegram using Telegram's official API. This tool provides a user-friendly terminal interface with colored output and multiple input methods. It also allows you to check multiple numbers at once, and identify whether accounts are bots or human users.
+
+Thanks to @Bellingcat for the original tool. I've attempted to make it more user-friendly and plan to add more features to further enrich numbers using other APIs.
 
 ## 🖼️ Screenshots
 
@@ -144,4 +146,28 @@ I plan to add more Telegram python tools to Telegrab in the future. Feel free to
 
 ## 📄 License
 
-See LICENSE.md 
+See LICENSE.md
+
+## 📖 How It Works
+
+Telegrab uses a Python library called Telethon to interact with Telegram's official API. Here's what happens when you search for a phone number:
+
+1. The tool logs into Telegram using your account (that's why you need to enter a verification code the first time)
+
+2. For each phone number you want to check, the tool:
+   - Temporarily adds the number as a contact in your Telegram account
+   - Retrieves any available information about that user
+   - Immediately removes the number from your contacts
+   - Shows you what it found in a neat table
+
+This is similar to what happens when you add a new contact in Telegram - you can see their profile info if they have an account. The tool just does this automatically and shows you the results. 
+
+> ⚠️ **Consider using a burner number for stronger opsec**
+
+**Privacy Note:** The tool only uses your Telegram account to check numbers. It doesn't:
+- Send messages to anyone
+- Keep the numbers in your contacts
+- Change any of your account settings
+- Store any data permanently
+
+The tool uses the official Telegram API through Telethon, which means it follows all of Telegram's rules and rate limits. This is why you sometimes need to wait between checking multiple numbers - Telegram has limits on how quickly you can look up users. 
