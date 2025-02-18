@@ -14,7 +14,7 @@ Thanks to @Bellingcat for the original tool. I've attempted to make it more user
 
 Telegrab uses a Python library called Telethon to interact with Telegram's official API. Here's what happens when you search for a phone number:
 
-1. Telegrab logs into Telegram using your account (Telegram will send a verification code to your device on first use)
+1. Telegrab logs into Telegram using your account (Telegram will send a verification code to your device upon first use)
 
 2. For each phone number you want to check, the tool:
    - Temporarily adds the number as a contact in your Telegram account
@@ -22,9 +22,9 @@ Telegrab uses a Python library called Telethon to interact with Telegram's offic
    - Immediately removes the number from your contacts
    - Shows you what it found in a neat table
 
-This is similar to what happens when you add a new contact in Telegram - you can see their profile info if they have an account. Telegrab just does this automatically and shows you the results. 
+This is similar to what happens when you add a new contact in Telegram - you can see their profile info if they have an account. Telegrab does this automatically, in seconds, and shows you the results while maintaining a low profile. 
 
-> ⚠️ **Consider using a burner number for stronger opsec**
+> ⚠️ **Consider using a burner or VoIP number for stronger opsec**
 
 **Privacy Note:** The tool only uses your Telegram account to check numbers. It doesn't:
 - Send messages to anyone
@@ -39,6 +39,7 @@ Telegrab uses the official Telegram API through Telethon, which means it follows
 - Python 3.7 or higher
 - A Telegram account
 - Telegram API credentials (API ID and API Hash)
+- Basic familiarity with terminal commands
 
 ## ⚙️ Setup
 
@@ -76,7 +77,7 @@ pip install -r requirements.txt
      - Short name: Can be anything (e.g., "telegrabber")
      - URL: Can be blank
      - Platform: Choose "Desktop"
-     - Description: Can be brief (e.g., "Personal usage")
+     - Description: Can be brief (e.g., "Research usage")
    - Accept the terms of service
    - Copy your API ID (a number) and API Hash (a long string)
    - Keep these credentials secure and never share them
@@ -132,7 +133,7 @@ python telegrab.py -f numbers.txt
 
 ### Additional Options
 
-1. Run without colors (useful for logging):
+1. Run without colours:
 ```bash
 python telegrab.py --no-color
 ```
@@ -159,10 +160,9 @@ python telegrab.py -h
 - Multiple input methods (interactive, file, command line)
 
 **⚠️ Important Notes:**
-- Phone numbers should be in international format WITHOUT the '+' symbol (e.g., if your number is +44-775-557-0626, enter it as 447755570626)
 - Make sure your `.env` file is in the same directory
 - Ensure you're in your virtual environment before running
-- Rate limiting may occur if checking many numbers quickly
+- Rate limiting may still occur if checking many numbers quickly
 
 ## 🤝 Contributing
 
