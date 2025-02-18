@@ -94,10 +94,26 @@ Your numbers.txt file should contain one phone number per line:
 python telegrab.py --no-color
 ```
 
-5. Get help about available options:
+5. Enable debug mode (shows detailed API responses):
+```bash
+python telegrab.py --debug
+```
+
+6. Get help about available options:
 ```bash
 python telegrab.py -h
 ```
+
+## ✨ Features
+
+- Check if phone numbers are registered on Telegram
+- Detect whether accounts are bots or human users
+- View user's last seen status
+- See user bio information when available
+- Debug mode for detailed API responses
+- Rate limiting protection with exponential backoff
+- Colored terminal output
+- Multiple input methods (interactive, file, command line)
 
 **⚠️ Important Notes:**
 - Phone numbers should be in international format WITHOUT the '+' symbol (e.g., if your number is +44-775-557-0626, enter it as 447755570626)
