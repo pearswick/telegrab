@@ -14,7 +14,7 @@ Thanks to @Bellingcat for the original tool. I've attempted to make it more user
 
 Telegrab uses a Python library called Telethon to interact with Telegram's official API. Here's what happens when you search for a phone number:
 
-1. The tool logs into Telegram using your account (Telegram will send a verification code to your device on first use)
+1. Telegrab logs into Telegram using your account (Telegram will send a verification code to your device on first use)
 
 2. For each phone number you want to check, the tool:
    - Temporarily adds the number as a contact in your Telegram account
@@ -22,7 +22,7 @@ Telegrab uses a Python library called Telethon to interact with Telegram's offic
    - Immediately removes the number from your contacts
    - Shows you what it found in a neat table
 
-This is similar to what happens when you add a new contact in Telegram - you can see their profile info if they have an account. The tool just does this automatically and shows you the results. 
+This is similar to what happens when you add a new contact in Telegram - you can see their profile info if they have an account. Telegrab just does this automatically and shows you the results. 
 
 > ⚠️ **Consider using a burner number for stronger opsec**
 
@@ -32,7 +32,7 @@ This is similar to what happens when you add a new contact in Telegram - you can
 - Change any of your account settings
 - Store any data permanently
 
-The tool uses the official Telegram API through Telethon, which means it follows all of Telegram's rules and rate limits. This is why you sometimes need to wait between checking multiple numbers - Telegram has limits on how quickly you can look up users.
+Telegrab uses the official Telegram API through Telethon, which means it follows all of Telegram's rules and rate limits. This is why you sometimes need to wait between checking multiple numbers - Telegram has limits on how quickly you can look up users.
 
 ## 🔧 Prerequisites
 
@@ -44,7 +44,7 @@ The tool uses the official Telegram API through Telethon, which means it follows
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/telegrab.git
+git clone https://github.com/pearswick/telegrab.git
 cd telegrab
 ```
 
@@ -72,8 +72,8 @@ pip install -r requirements.txt
    - Log in with your phone number
    - Go to 'API development tools'
    - Fill in your application details:
-     - App title: Can be anything (e.g., "My Checker")
-     - Short name: Can be anything (e.g., "mychecker")
+     - App title: Can be anything (e.g., "telegrab-api")
+     - Short name: Can be anything (e.g., "telegrabber")
      - URL: Can be blank
      - Platform: Choose "Desktop"
      - Description: Can be brief (e.g., "Personal usage")
@@ -90,7 +90,7 @@ YOUR_PHONE=your_phone_number  # Format: 1234567890 (remove the +)
 
 ## 🚀 Usage
 
-When you first run the tool, Telegram will send a verification code to your Telegram account. You'll need to enter this code in the terminal to authenticate. This is a one-time process for each session.
+When you first run the tool, Telegrab will send a verification code to your Telegram account. You'll need to enter this code in the terminal to authenticate. This is a one-time process for each session.
 
 ### Single Number Search
 ```bash
