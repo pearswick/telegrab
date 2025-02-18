@@ -2,7 +2,7 @@
 
 This is an OSINT tool for investigative journalists to check if phone numbers are registered on Telegram using Telegram's official API. Telegrab provides a user-friendly terminal interface with colored output and multiple input methods. It also allows you to check multiple numbers at once, and identify whether accounts are bots or human users.
 
-Thanks to @Bellingcat for making the original tool available. I've attempted to make it more user-friendly and plan to add more features to further enrich numbers using APIs from other services.
+Telegrab is based on a [Bellingcat tool](https://github.com/bellingcat/telegram-phone-number-checker). This is a more user-friendly version of that tool which I plan to develop with more features to further enrich numbers using APIs from other services. Thanks to Bellingcat for making the original tool available. 
 
 ![Telegrab CLI Interface](screenshots/telegrab_cli.png)
 
@@ -168,4 +168,4 @@ I plan to add more Telegram python tools to Telegrab in the future. Feel free to
 
 ## 📄 License
 
-See LICENSE.md 
+See [License.MD](License.MD)
