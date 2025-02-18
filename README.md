@@ -14,7 +14,7 @@ Thanks to @Bellingcat for the original tool. I've attempted to make it more user
 
 Telegrab uses a Python library called Telethon to interact with Telegram's official API. Here's what happens when you search for a phone number:
 
-1. The tool logs into Telegram using your account (that's why you need to enter a verification code the first time)
+1. The tool logs into Telegram using your account (Telegram will send a verification code to your device on first use)
 
 2. For each phone number you want to check, the tool:
    - Temporarily adds the number as a contact in your Telegram account
