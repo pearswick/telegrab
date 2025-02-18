@@ -5,6 +5,7 @@ A Python tool for investigative journalists to check if phone numbers are regist
 ## 🖼️ Screenshots
 
 ![Telegrab CLI Interface](screenshots/telegrab_cli.jpg)
+
 *The Telegrab command-line interface showing search results*
 
 ## 🔧 Prerequisites
