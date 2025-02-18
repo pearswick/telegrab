@@ -1,6 +1,6 @@
 # 📱 Telegrab - A Telegram Phone Number Checker
 
-A Python tool for investigative journalists to check if phone numbers are registered on Telegram. This tool provides a user-friendly terminal interface with colored output and multiple input methods.
+A Python OSINT tool for investigative journalists to check if phone numbers are registered on Telegram. This tool provides a user-friendly terminal interface with colored output and multiple input methods.
 
 ## 🖼️ Screenshots
 
@@ -107,7 +107,7 @@ python telegrab.py -h
 
 ## 🤝 Contributing
 
-[Contributing guidelines to be added]
+I plan to add more Telegram python tools to Telegrab in the future. Feel free to reach out for suggestions or contributions.
 
 ## 📄 License
 
