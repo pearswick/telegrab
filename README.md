@@ -66,40 +66,57 @@ YOUR_PHONE=your_phone_number  # Format: 1234567890 (remove the +)
 
 When you first run the tool, Telegram will send a verification code to your Telegram account. You'll need to enter this code in the terminal to authenticate. This is a one-time process for each session.
 
-You can run Telegrab in several ways:
-
-1. Basic interactive mode (will prompt for numbers):
+### Single Number Search
 ```bash
 python telegrab.py
 ```
+When prompted, enter a single phone number. The tool automatically removes spaces and special characters, so these formats all work:
+- 447755570626
+- +44 7755 570626
+- +44-7755-570626
 
-2. Check specific numbers directly:
+### Batch Searching
+
+You can check multiple numbers at once in two ways:
+
+1. **Comma-separated input:**
 ```bash
-python telegrab.py -n "447755570626,447755570627"
+python telegrab.py -n "447755570626,447755570627,447755570628"
+```
+Or when prompted, enter multiple numbers separated by commas:
+```
+Enter phone number (or comma-separated numbers): +44 7755 570626, +44 7755 570627
 ```
 
-3. Check numbers from a file:
+2. **Text file input:**
+Create a file (e.g., `numbers.txt`) with one number per line:
+```plaintext
++44 7755 570626
++44 7755 570627
+447755570628
+```
+Then run:
 ```bash
 python telegrab.py -f numbers.txt
 ```
-Your numbers.txt file should contain one phone number per line:
-```plaintext
-447755570626
-447755570627
-447755570628
-```
 
-4. Run without colors (useful for logging):
+![Telegrab Batch Search](screenshots/telegrab_batch.png)
+
+*The Telegrab interface showing batch search results using Russian numbers from breach data*
+
+### Additional Options
+
+1. Run without colors (useful for logging):
 ```bash
 python telegrab.py --no-color
 ```
 
-5. Enable debug mode (shows detailed API responses):
+2. Enable debug mode (shows detailed API responses):
 ```bash
 python telegrab.py --debug
 ```
 
-6. Get help about available options:
+3. Get help about available options:
 ```bash
 python telegrab.py -h
 ```

@@ -222,59 +222,27 @@ def create_parser():
     parser.add_argument('--debug', action='store_true', help='Enable debug logging')
     return parser
 
+def clean_phone_number(phone):
+    """Clean phone number by removing spaces, dashes, parentheses and plus signs"""
+    return ''.join(filter(str.isdigit, phone))
+
 def get_phone_numbers(args):
     """Get phone numbers from arguments or prompt user"""
-    numbers = []
-    
-    # Get numbers from command line arguments
     if args.numbers:
-        numbers.extend(args.numbers.split(','))
-    
-    # Get numbers from file
+        # Clean each number in the comma-separated list
+        return [clean_phone_number(num.strip()) for num in args.numbers.split(',')]
     elif args.file:
         try:
             with open(args.file, 'r') as f:
-                numbers.extend([line.strip() for line in f if line.strip()])
-        except Exception as e:
-            console.print(f"[red]Error reading file: {str(e)}[/red]")
+                # Clean each number from the file
+                return [clean_phone_number(line.strip()) for line in f if line.strip()]
+        except FileNotFoundError:
+            console.print(f"[red]Error: File {args.file} not found.[/red]")
             return []
-    
-    # Prompt for numbers if none provided
     else:
-        while True:
-            numbers_input = console.input("[bold]Enter phone numbers (comma-separated or press Enter to finish): [/bold]")
-            if not numbers_input:  # If user presses Enter without input
-                if numbers:  # If we already have numbers, break
-                    break
-                else:  # If no numbers yet, exit
-                    return []
-                
-            temp_numbers = numbers_input.split(',')
-            valid_numbers = []
-            
-            for n in temp_numbers:
-                cleaned = n.strip().replace('+', '')
-                if not cleaned.isdigit():
-                    console.print(f"[red]Error: '{n}' is not a valid phone number. Please enter numbers only.[/red]")
-                    continue
-                valid_numbers.append(cleaned)
-            
-            if valid_numbers:  # If we got any valid numbers
-                numbers.extend(valid_numbers)
-                break  # Exit the loop after getting valid numbers
-    
-    # Clean up and validate numbers from file or command line arguments
-    if args.numbers or args.file:
-        validated_numbers = []
-        for n in numbers:
-            cleaned = n.strip().replace('+', '')
-            if not cleaned.isdigit():
-                console.print(f"[red]Error: '{n}' is not a valid phone number. Please enter numbers only.[/red]")
-                continue
-            validated_numbers.append(cleaned)
-        numbers = validated_numbers
-    
-    return numbers
+        # Prompt user for input and clean the number
+        phone = input("Enter phone number (or comma-separated numbers): ")
+        return [clean_phone_number(num.strip()) for num in phone.split(',')]
 
 if __name__ == "__main__":
     asyncio.run(main())
