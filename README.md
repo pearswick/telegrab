@@ -1,21 +1,19 @@
-████████╗███████╗██╗     ███████╗ ██████╗ ██████╗  █████╗ ██████╗ 
-╚══██╔══╝██╔════╝██║     ██╔════╝██╔════╝ ██╔══██╗██╔══██╗██╔══██╗
-   ██║   █████╗  ██║     █████╗  ██║  ███╗██████╔╝███████║██████╔╝
-   ██║   ██╔══╝  ██║     ██╔══╝  ██║   ██║██╔══██╗██╔══██║██╔══██╗
-   ██║   ███████╗███████╗███████╗╚██████╔╝██║  ██║██║  ██║██████╔╝
-   ╚═╝   ╚══════╝╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+# 📱 Telegrab - A Telegram Phone Number Checker
 
-# Telegrab - A phone number checker for Telegram
+A Python tool for investigative journalists to check if phone numbers are registered on Telegram. This tool provides a user-friendly terminal interface with colored output and multiple input methods.
 
-A Python tool for investigative journalists to check if phone numbers are registered on Telegram. This tool provides a user-friendly terminal interface but does require some technical knowledge to install. This tool builds on the telegram-phone-number-checker built by Bellingcat. 
+## 🖼️ Screenshots
 
-## Prerequisites
+![Telegrab CLI Interface](screenshots/telegrab_cli.jpg)
+*The Telegrab command-line interface showing search results*
+
+## 🔧 Prerequisites
 
 - Python 3.7 or higher
 - A Telegram account
 - Telegram API credentials (API ID and API Hash)
 
-## Setup
+## ⚙️ Setup
 
 1. Clone the repository:
 ```bash
@@ -63,7 +61,7 @@ API_KEY=your_api_hash
 YOUR_PHONE=your_phone_number  # Format: 1234567890 (remove the +)
 ```
 
-## Usage
+## 🚀 Usage
 
 When you first run the tool, Telegram will send a verification code to your Telegram account. You'll need to enter this code in the terminal to authenticate. This is a one-time process for each session.
 
@@ -100,16 +98,16 @@ python telegrab.py --no-color
 python telegrab.py -h
 ```
 
-**Important Notes:**
+**⚠️ Important Notes:**
 - Phone numbers should be in international format WITHOUT the '+' symbol (e.g., if your number is +44-775-557-0626, enter it as 447755570626)
 - Make sure your `.env` file is in the same directory
 - Ensure you're in your virtual environment before running
 - Rate limiting may occur if checking many numbers quickly
 
-## Contributing
+## 🤝 Contributing
 
 [Contributing guidelines to be added]
 
-## License
+## 📄 License
 
 See LICENSE.md 

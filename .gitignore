@@ -1,2 +1,18 @@
+# Environment variables
 .env
+
+# Telegram session
+*.session
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env/
+
+# IDE
+.vscode/
+.idea/
+
 session_name.session 
