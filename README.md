@@ -1,10 +1,8 @@
-# 📱 Telegrab - A Telegram Phone Number Checker
+# telegrab
 
-A Python OSINT tool for investigative journalists to check if phone numbers are registered on Telegram using Telegram's official API. This tool provides a user-friendly terminal interface with colored output and multiple input methods. It also allows you to check multiple numbers at once, and identify whether accounts are bots or human users.
+OSINT tool for investigative journalists to check if phone numbers are registered on Telegram using Telegram's official API. This tool provides a user-friendly terminal interface with colored output and multiple input methods. It also allows you to check multiple numbers at once, and identify whether accounts are bots or human users.
 
-Thanks to @Bellingcat for the original tool. I've attempted to make it more user-friendly and plan to add more features to further enrich numbers using other APIs.
-
-## 🖼️ Screenshots
+Thanks to @Bellingcat for making the original tool available. I've attempted to make it more user-friendly and plan to add more features to further enrich numbers using APIs from other services.
 
 ![Telegrab CLI Interface](screenshots/telegrab_cli.png)
 
@@ -24,7 +22,7 @@ Telegrab uses a Python library called Telethon to interact with Telegram's offic
 
 This is similar to what happens when you add a new contact in Telegram - you can see their profile info if they have an account. Telegrab does this automatically, in seconds, and shows you the results while maintaining a low profile. 
 
-> ⚠️ **Consider using a burner or VoIP number for stronger opsec**
+> ⚠️ **Consider using a burner or VoIP number for stronger opsec. Batch searching a high amount of numbers at once could trigger a Telegram ban, use with caution!**
 
 **Privacy Note:** The tool only uses your Telegram account to check numbers. It doesn't:
 - Send messages to anyone
@@ -162,7 +160,7 @@ python telegrab.py -h
 **⚠️ Important Notes:**
 - Make sure your `.env` file is in the same directory
 - Ensure you're in your virtual environment before running
-- Rate limiting may still occur if checking many numbers quickly
+- Rate limiting may still occur if checking many numbers quickly, consider waiting between batch checks
 
 ## 🤝 Contributing
 
