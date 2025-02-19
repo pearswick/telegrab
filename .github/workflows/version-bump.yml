@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   bump-version:
     runs-on: ubuntu-latest
@@ -26,8 +30,8 @@ jobs:
           
       - name: Commit version update
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add telegrab/version.py
           git commit -m "bump version to ${{ steps.tag_version.outputs.new_tag }}"
           git push 
