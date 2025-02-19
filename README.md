@@ -6,7 +6,7 @@ This is an OSINT tool for investigative journalists to check if phone numbers ar
 
 *The Telegrab command-line interface running in a terminal*
 
-Telegrab is based on a [Bellingcat tool](https://github.com/bellingcat/telegram-phone-number-checker). This is a more user-friendly version of that tool which I plan to develop with more features to further enrich numbers using APIs from other services. Thanks to Bellingcat for making the original tool available. 
+Telegrab is based on a [Bellingcat tool](https://github.com/bellingcat/telegram-phone-number-checker). This is a more user-friendly version of that tool which I plan to develop with more features to further enrich numbers using APIs from other services. Thanks to Bellingcat for making the original tool available. For future development suggestions, DM me on Signal: pearswick.01
 
 ## ✨ Features
 
