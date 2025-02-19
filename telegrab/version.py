@@ -1,0 +1,1 @@
+__version__ = "1.0.0"  # Using semantic versioning: MAJOR.MINOR.PATCH 

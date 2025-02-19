@@ -8,6 +8,25 @@ This is an OSINT tool for investigative journalists to check if phone numbers ar
 
 Telegrab is based on a [Bellingcat tool](https://github.com/bellingcat/telegram-phone-number-checker). This is a more user-friendly version of that tool which I plan to develop with more features to further enrich numbers using APIs from other services. Thanks to Bellingcat for making the original tool available. 
 
+## ✨ Features
+
+- Check if phone numbers are registered on Telegram
+- Detect whether accounts are bots or human users
+- Identify and display ISO country codes (e.g., "GB", "RU", "US") for each number
+- View user's last seen status:
+  - Exact timestamp when privacy settings allow
+  - Or one of these timeframes based on privacy settings:
+    - "Online"
+    - "Last seen recently"
+    - "Last seen in the last week"
+    - "Last seen in the last month"
+    - "Last seen a long time ago"
+- See user bio information when available
+- Debug mode for detailed API responses
+- Rate limiting protection with exponential backoff
+- Colored terminal output
+- Multiple input methods (interactive, file, command line)
+
 ## 📖 How It Works
 
 Telegrab uses a Python library called Telethon to interact with Telegram's official API. Here's what happens when you search for a phone number:
@@ -146,19 +165,8 @@ python telegrab.py --debug
 python telegrab.py -h
 ```
 
-## ✨ Features
-
-- Check if phone numbers are registered on Telegram
-- Detect whether accounts are bots or human users
-- View user's last seen status
-- See user bio information when available
-- Debug mode for detailed API responses
-- Rate limiting protection with exponential backoff
-- Colored terminal output
-- Multiple input methods (interactive, file, command line)
-
 **⚠️ Important Notes:**
-- Make sure your `.env` file is in the same directory
+- Create your `.env` file first and make sure it is in the same directory
 - Ensure you're in your virtual environment before running
 - Rate limiting may still occur if checking many numbers quickly, consider waiting between batch checks
 

@@ -1,0 +1,33 @@
+name: Bump Version
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Bump version and push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: patch
+          
+      - name: Update version.py
+        run: |
+          echo "__version__ = \"${{ steps.tag_version.outputs.new_tag }}\"" > telegrab/version.py
+          
+      - name: Commit version update
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add telegrab/version.py
+          git commit -m "bump version to ${{ steps.tag_version.outputs.new_tag }}"
+          git push 
