@@ -176,4 +176,4 @@ I plan to add more Telegram python tools to Telegrab in the future. Feel free to
 
 ## 📄 License
 
-See [License.MD](License.MD)
+See [LICENSE.md](LICENSE.md)
